@@ -84,3 +84,13 @@ void imprimirLista(Nodo* cabeza) {
     }
     printf("NULL\n");
 }
+
+void liberarMemoria(Nodo* cabeza) {
+    Nodo* actual = cabeza;
+    while (actual != NULL) {
+        Nodo* siguiente = actual->siguiente;
+        free(actual);
+        actual = siguiente;
+    }
+}
+
